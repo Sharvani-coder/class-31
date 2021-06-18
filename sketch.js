@@ -7,6 +7,35 @@ var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
 var bird, slingshot;
+var gameState="onSling"
+var string = "This is class31"
+console.log(string);
+
+var num = 31
+console.log(num);
+
+var bool = true;
+console.log(bool);
+
+var object
+console.log(object);
+object = null;
+console.log(object);
+
+var arr1 = [1 , 2 ,3, 4,5];
+console.log(arr1);
+
+var arr2 = ["class32", 31 , true]
+console.log(arr2);
+
+var arr3 = [[1,2],[3,4], [5,6]]
+console.log(arr3[1][0]);
+
+arr3.push("sharvani");
+console.log(arr3);
+
+arr3.pop();
+console.log(arr3)
 
 
 function preload() {
@@ -69,16 +98,22 @@ function draw(){
 }
 
 function mouseDragged(){
+    if(gameState!=="lounched"){
+
+    
     Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
 }
 
 
 function mouseReleased(){
     slingshot.fly();
+    gameState = "lounched"
 }
 
 function keyPressed(){
     if(keyCode === 32){
-        slingshot.attach(bird.body);
+      //  slingshot.attach(bird.body);
     }
+
 }
